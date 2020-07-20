@@ -8,7 +8,7 @@ CREATE TABLE Mahasiswa
     Nama_Mahasiswa varchar(50) not null,
     Alamat TEXT not null,
     Jurusan Varchar(50),
-    umur INT
+    Tanggal_Lahir TEXT
 );
 CREATE TABLE MataKuliah
 (
@@ -38,32 +38,34 @@ CREATE TABLE Jurusan
 -- DATA ENTRY Mahasiswa
 
 INSERT INTO Mahasiswa
-    (NIM, Nama_Mahasiswa, Alamat, Jurusan, umur)
+    (NIM, Nama_Mahasiswa, Alamat, Jurusan, Tanggal_Lahir)
 values
-    ("11415001", "Danu", "Jakarta, DKI Jakarta", "Rekayasa Pertanian", 18),
-    ("11415038", "Toto", "Solo, Jawa Tengah", "Rekayasa Pertanian", 19),
-    ("11415020", "Dayat", "Padang, Sumatera Barat", "Rekayasa Pertanian", 20),
-    ("11215002", "Azis", "Bekasi, Jawa Barat", "Bioengineering", 21),
-    ("11215003", "Stanley", "Medan, Sumatera Utara", "Bioengineering", 18),
-    ("11215013", "Romario", "Bandung, Jawa Barat", "Bioengineering", 19),
-    ("11515023", "Yopi", "Banda Aceh, Aceh ", "Rekayasa Kehutanan", 21),
-    ("11515006", "Rahman", "Bandung, Jawa Barat", "Rekayasa Kehutanan", 21),
-    ("12114001", "Ali", "Sumbawa, NTT", "Pasca Panen", 19),
-    ("12114003", "Doni", "Bandung, Jawa Barat", "Pasca Panen", 21);
+    ("11415001", "Danu", "Jakarta, DKI Jakarta", "Rekayasa Pertanian", "1997-08-22"),
+    ("11415038", "Toto", "Solo, Jawa Tengah", "Rekayasa Pertanian", "1996-10-30"),
+    ("11415020", "Dayat", "Padang, Sumatera Barat", "Rekayasa Pertanian", "1997-07-05"),
+    ("11215002", "Azis", "Bekasi, Jawa Barat", "Bioengineering", "1995-04-04"),
+    ("11215003", "Stanley", "Medan, Sumatera Utara", "Bioengineering", "1998-12-25"),
+    ("11215013", "Romario", "Bandung, Jawa Barat", "Bioengineering", "1999-01-24"),
+    ("11515023", "Yopi", "Banda Aceh, Aceh ", "Rekayasa Kehutanan", "2000-12-20"),
+    ("11515006", "Rahman", "Bandung, Jawa Barat", "Rekayasa Kehutanan", "1997-08-27"),
+    ("12114001", "Ali", "Sumbawa, NTT", "Pasca Panen", "1994-05-20"),
+    ("12114003", "Doni", "Bandung, Jawa Barat", "Pasca Panen", "1993-02-10");
+
+
 
 -- OUTPUT::
--- NIM         Nama_Mahasiswa  Alamat                   Jurusan             umur      
--- ----------  --------------  --------------------     ------------------  ----------
--- 11415001    Danu            Jakarta, DKI Jakarta     Rekayasa Pertanian  18        
--- 11415038    Toto            Solo, Jawa Tengah        Rekayasa Pertanian  19        
--- 11415020    Dayat           Padang, Sumatera Barat   Rekayasa Pertanian  20        
--- 11215002    Azis            Bekasi, Jawa Barat       Bioengineering      21        
--- 11215003    Stanley         Medan, Sumatera Utara    Bioengineering      18        
--- 11215013    Romario         Bandung, Jawa Barat      Bioengineering      19        
--- 11515023    Yopi            Banda Aceh, Aceh         Rekayasa Kehutanan  21        
--- 11515006    Rahman          Bandung, Jawa Barat      Rekayasa Kehutanan  21        
--- 12114001    Ali             Sumbawa, NTT             Pasca Panen         19        
--- 12114003    Doni            Bandung, Jawa Barat      Pasca Panen         21   
+-- NIM         Nama_Mahasiswa  Alamat                Jurusan             Tanggal_Lahir
+-- ----------  --------------  --------------------  ------------------  -------------
+-- 11415001    Danu            Jakarta, DKI Jakarta  Rekayasa Pertanian  1997-08-22   
+-- 11415038    Toto            Solo, Jawa Tengah     Rekayasa Pertanian  1996-10-30   
+-- 11415020    Dayat           Padang, Sumatera Bar  Rekayasa Pertanian  1997-07-05   
+-- 11215002    Azis            Bekasi, Jawa Barat    Bioengineering      1995-04-04   
+-- 11215003    Stanley         Medan, Sumatera Utar  Bioengineering      1998-12-25   
+-- 11215013    Romario         Bandung, Jawa Barat   Bioengineering      1999-01-24   
+-- 11515023    Yopi            Banda Aceh, Aceh      Rekayasa Kehutanan  2000-12-20   
+-- 11515006    Rahman          Bandung, Jawa Barat   Rekayasa Kehutanan  1997-08-27   
+-- 12114001    Ali             Sumbawa, NTT          Pasca Panen         1994-05-20   
+-- 12114003    Doni            Bandung, Jawa Barat   Pasca Panen         1993-02-10   
 
 
 -- DATA ENTRY MataKuliah
@@ -208,33 +210,39 @@ INSERT INTO Krs(NIM, Id_Matkul, Id_Dosen, Nilai) values
 SELECT*FROM Mahasiswa;
 
 -- OUTPUT::
--- NIM         Nama_Mahasiswa  Alamat                   Jurusan             umur      
--- ----------  --------------  --------------------     ------------------  ----------
--- 11415001    Danu            Jakarta, DKI Jakarta     Rekayasa Pertanian  18        
--- 11415038    Toto            Solo, Jawa Tengah        Rekayasa Pertanian  19        
--- 11415020    Dayat           Padang, Sumatera Barat   Rekayasa Pertanian  20        
--- 11215002    Azis            Bekasi, Jawa Barat       Bioengineering      21        
--- 11215003    Stanley         Medan, Sumatera Utara    Bioengineering      18        
--- 11215013    Romario         Bandung, Jawa Barat      Bioengineering      19        
--- 11515023    Yopi            Banda Aceh, Aceh         Rekayasa Kehutanan  21        
--- 11515006    Rahman          Bandung, Jawa Barat      Rekayasa Kehutanan  21        
--- 12114001    Ali             Sumbawa, NTT             Pasca Panen         19        
--- 12114003    Doni            Bandung, Jawa Barat      Pasca Panen         21   
+-- NIM         Nama_Mahasiswa  Alamat                Jurusan             Tanggal_Lahir
+-- ----------  --------------  --------------------  ------------------  -------------
+-- 11415001    Danu            Jakarta, DKI Jakarta  Rekayasa Pertanian  1997-08-22   
+-- 11415038    Toto            Solo, Jawa Tengah     Rekayasa Pertanian  1996-10-30   
+-- 11415020    Dayat           Padang, Sumatera Bar  Rekayasa Pertanian  1997-07-05   
+-- 11215002    Azis            Bekasi, Jawa Barat    Bioengineering      1995-04-04   
+-- 11215003    Stanley         Medan, Sumatera Utar  Bioengineering      1998-12-25   
+-- 11215013    Romario         Bandung, Jawa Barat   Bioengineering      1999-01-24   
+-- 11515023    Yopi            Banda Aceh, Aceh      Rekayasa Kehutanan  2000-12-20   
+-- 11515006    Rahman          Bandung, Jawa Barat   Rekayasa Kehutanan  1997-08-27   
+-- 12114001    Ali             Sumbawa, NTT          Pasca Panen         1994-05-20   
+-- 12114003    Doni            Bandung, Jawa Barat   Pasca Panen         1993-02-10  
 
 
--- 2.Tampilkan Mahasiswa yang berumur dibawah 20 tahun
+-- 2.Tampilkan Mahasiswa yang berTanggal_Lahir dibawah 20 tahun
+SELECT NIM,Nama_Mahasiswa,Alamat, Jurusan, 
+    CASE
+    WHEN strftime('%m',date("now"))> strftime('%m',date(Tanggal_Lahir)) THEN strftime("%Y",date("now"))-strftime("%Y",date(Tanggal_Lahir))
+    WHEN strftime('%m',date("now"))= strftime('%m',date(Tanggal_Lahir)) THEN 
+        CASE
+            WHEN strftime('%d',date("now"))>= strftime('%d',date(Tanggal_Lahir)) THEN strftime("%Y",date("now"))-strftime("%Y",date(Tanggal_Lahir))
+            ELSE strftime("%Y",date("now"))-strftime("%Y",date(Tanggal_Lahir))-1
+        END
+    WHEN strftime('%m',date("now"))< strftime('%m',date(Tanggal_Lahir)) THEN strftime("%Y",date("now"))-strftime("%Y",date(Tanggal_Lahir))-1
+END AS Usia 
+FROM Mahasiswa
+WHERE Usia<20;
 
-SELECT*FROM Mahasiswa
-WHERE umur<20; 
 
 -- OUTPUT::
--- NIM         Nama_Mahasiswa  Alamat                    Jurusan             umur      
--- ----------  --------------  --------------------      ------------------  ----------
--- 11415001    Danu            Jakarta, DKI Jakarta      Rekayasa Pertanian  18        
--- 11415038    Toto            Solo, Jawa Tengah         Rekayasa Pertanian  19        
--- 11215003    Stanley         Medan, Sumatera Utara     Bioengineering      18        
--- 11215013    Romario         Bandung, Jawa Barat       Bioengineering      19        
--- 12114001    Ali             Sumbawa, NTT              Pasca Panen         19 
+-- NIM         Nama_Mahasiswa  Alamat             Jurusan             Usia      
+-- ----------  --------------  -----------------  ------------------  ----------
+-- 11515023    Yopi            Banda Aceh, Aceh   Rekayasa Kehutanan  19     
 
 
 -- 3.Tampilkan mahasiswa yang memiliki nilai B keatas
@@ -309,39 +317,60 @@ GROUP BY Dosen.Nama_Dosen;
 -- Prof. Dr. Stanley    2  
 
 
---7 Urutkan Mahasiswa berdasarkan umurnya(default ASC: kecil ke besar)
-SELECT Nama_Mahasiswa, umur FROM Mahasiswa
-ORDER BY umur;
+--7 Urutkan Mahasiswa berdasarkan Tanggal_Lahirnya(default ASC: kecil ke besar)
+SELECT Nama_Mahasiswa,
+    CASE
+    WHEN strftime('%m',date("now"))> strftime('%m',date(Tanggal_Lahir)) THEN strftime("%Y",date("now"))-strftime("%Y",date(Tanggal_Lahir))
+    WHEN strftime('%m',date("now"))= strftime('%m',date(Tanggal_Lahir)) THEN 
+        CASE
+            WHEN strftime('%d',date("now"))>= strftime('%d',date(Tanggal_Lahir)) THEN strftime("%Y",date("now"))-strftime("%Y",date(Tanggal_Lahir))
+            ELSE strftime("%Y",date("now"))-strftime("%Y",date(Tanggal_Lahir))-1
+        END
+    WHEN strftime('%m',date("now"))< strftime('%m',date(Tanggal_Lahir)) THEN strftime("%Y",date("now"))-strftime("%Y",date(Tanggal_Lahir))-1
+END AS Usia 
+FROM Mahasiswa
+ORDER BY Usia;
 
--- Nama_Mahasiswa  umur      
+
+-- Nama_Mahasiswa  Usia      
 -- --------------  ----------
--- Danu            18        
--- Toto            19        
--- Dayat           20        
--- Azis            21        
--- Stanley         18        
--- Romario         19        
--- Yopi            21        
--- Rahman          21        
--- Ali             19        
--- Doni            21  
+-- Yopi            19        
+-- Stanley         21        
+-- Romario         21        
+-- Danu            22        
+-- Rahman          22        
+-- Toto            23        
+-- Dayat           23        
+-- Azis            25        
+-- Ali             26        
+-- Doni            27  
 
 -- Mengurutkan dari yang lebih tua ke muda
-SELECT Nama_Mahasiswa, umur FROM Mahasiswa
-ORDER BY umur DESC;
+SELECT Nama_Mahasiswa,
+    CASE
+    WHEN strftime('%m',date("now"))> strftime('%m',date(Tanggal_Lahir)) THEN strftime("%Y",date("now"))-strftime("%Y",date(Tanggal_Lahir))
+    WHEN strftime('%m',date("now"))= strftime('%m',date(Tanggal_Lahir)) THEN 
+        CASE
+            WHEN strftime('%d',date("now"))>= strftime('%d',date(Tanggal_Lahir)) THEN strftime("%Y",date("now"))-strftime("%Y",date(Tanggal_Lahir))
+            ELSE strftime("%Y",date("now"))-strftime("%Y",date(Tanggal_Lahir))-1
+        END
+    WHEN strftime('%m',date("now"))< strftime('%m',date(Tanggal_Lahir)) THEN strftime("%Y",date("now"))-strftime("%Y",date(Tanggal_Lahir))-1
+END AS Usia 
+FROM Mahasiswa
+ORDER BY Usia DESC;
 
--- Nama_Mahasiswa  umur      
+-- Nama_Mahasiswa  Usia      
 -- --------------  ----------
--- Azis            21        
--- Yopi            21        
--- Rahman          21        
--- Doni            21        
--- Dayat           20        
--- Toto            19        
--- Romario         19        
--- Ali             19        
--- Danu            18        
--- Stanley         18  
+-- Doni            27        
+-- Ali             26        
+-- Azis            25        
+-- Toto            23        
+-- Dayat           23        
+-- Danu            22        
+-- Rahman          22        
+-- Stanley         21        
+-- Romario         21        
+-- Yopi            19 
 
 --8.Menampilkan Kontrak Mahasiswa yang mengulang Matakuliah
 SELECT Mahasiswa.Nama_Mahasiswa,Mahasiswa.Jurusan,Krs.NIM,MataKuliah.Nama_Matkul As MataKuliah_Mengulang, Krs.Id_Matkul As Kode_MataKuliah,Dosen.Nama_Dosen AS Dosen, Krs.Nilai, MataKuliah.SKS AS Jumlah_SKS
