@@ -262,14 +262,14 @@ SELECT Mahasiswa.Nama_Mahasiswa,SUM(MataKuliah.SKS) AS Total_SKS
 FROM((Mahasiswa JOIN Krs ON Mahasiswa.NIM=Krs.NIM)
 JOIN MataKuliah ON Krs.Id_Matkul=Matakuliah.Id_Matkul )
 GROUP BY Mahasiswa.Nama_Mahasiswa
-HAVING Total_SKS>9;
+HAVING Total_SKS>10;
 
 -- OUTPUT::
 -- Nama_Mahasiswa  Total_SKS 
 -- --------------  ----------
 -- Azis            12        
 -- Romario         11        
--- Stanley         10   
+ 
 
 --5 Tampilkan Mahasiswa yang mengontrak "data mining"
 SELECT Mahasiswa.Nama_Mahasiswa AS Mahasiswa_DataMining, Mahasiswa.NIM, Krs.Nilai
